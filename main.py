@@ -30,3 +30,8 @@ def subtitle(message):
     except Exception as e:
         print(e)
         bot.send_message(message.chat.id, 'Try again.')
+
+print('Running...')
+
+bot.remove_webhook()
+bot.polling()
