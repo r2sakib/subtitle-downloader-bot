@@ -161,8 +161,8 @@ def get_subtitle(query: str, id: str):
                     dw_page_urls = []
                     titles = []
                     for tr in table_rows:
-                        dw_page_urls.append(website_url + tr.find('a').get('href'))
-                        titles.append(website_url + tr.find('a').text)
+                        dw_page_urls.append(tr.find('a').get('href'))
+                        titles.append(tr.find('a').text)
 
                     # KEYS [rating, language, title, download_page_URL]
                     all_subs = list(map(list, zip(ratings, languages, titles, dw_page_urls)))
@@ -200,3 +200,5 @@ def get_subtitle(query: str, id: str):
     else:
         
         return "Subtitle not found."
+
+print(get_subtitle("wakanda forever", "123"))
